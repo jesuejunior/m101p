@@ -1,5 +1,6 @@
+=============
 MongoDB M101P
-
+=============
 Homework 1.1
 
 .. code-block:: javascript
@@ -28,18 +29,30 @@ Homework 1.3
 
 
 Tips and Tricks for MongDB
-++++++++++++++++++++++++++
+--------------------------
 
-* Array query(Equality Matches on Arrays)
-  - On the entire array
+Array query(Equality Matches on Arrays)
++++++++++++++++++++++++++++++++++++++++
+
+- On the entire array
+
+... code-block:: javascript
+
     > db.collection.find({"actor": ["wsx", "edc"]})
 
-  - Based on any element
+- Based on any element
+
+... code-block:: javascript
+
     > db.collection.find({"actor": "wsx"})
 
-  - Based on a specific element
+- Based on a specific element
+
+... code-block:: javascript
+
     > db.collection.find({ "actor.0": "wsx" })
-  - More complex matches using operators
+
+- More complex matches using operators
 
 * Cursors just returns 101 documents or until 1MB in the total of documents
 * Projection is the better way to limit fields to query return. i.e:
