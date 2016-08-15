@@ -36,19 +36,13 @@ Array query(Equality Matches on Arrays)
 
 - On the entire array
 
-... code-block:: javascript
-
     > db.collection.find({"actor": ["wsx", "edc"]})
 
 - Based on any element
 
-... code-block:: javascript
-
     > db.collection.find({"actor": "wsx"})
 
 - Based on a specific element
-
-... code-block:: javascript
 
     > db.collection.find({ "actor.0": "wsx" })
 
