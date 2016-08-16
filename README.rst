@@ -26,7 +26,27 @@ Homework 1.3
     > curl http://localhost:8080/hw1/50
     53
 
+Homework 2.1
 
+Import data
+
+mongoimport --drop -d students -c grades grades.json
+
+> db.grades.find({'score': {$gte:65}}).sort({score: 1}).limit(1)
+{ "_id" : ObjectId("50906d7fa3c412bb040eb5cf"), "student_id" : 22, "type" : "exam", "score" :
+65.02518811936324 }
+
+Homework 2.2
+
+execute 
+
+python hw2_2.py
+
+then
+
+> db.grades.aggregate( { '$group' : { '_id' : '$student_id', 'average' : { $avg : '$score' } } }, {
+'$sort' : { 'average' : -1 } }, { '$limit' : 1 } )
+{ "_id" : 54, "average" : 96.19488173037341 }
 
 Tips and Tricks for MongDB
 --------------------------
