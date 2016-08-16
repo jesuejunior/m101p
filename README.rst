@@ -48,6 +48,80 @@ then
 '$sort' : { 'average' : -1 } }, { '$limit' : 1 } )
 { "_id" : 54, "average" : 96.19488173037341 }
 
+
+Homework 2.3
+
+In line 58 from userDAO.py 
+
+.. code-block:: python
+
+    user = self.users.find_one({'_id': username})
+
+In the line 89 from userDAO.py
+
+.. code-block:: python
+
+    self.users.insert_one(user)
+
+Validating and getting the result
+
+.. code-block:: shell
+    
+    $ python validate.py
+    master [+       0] [a850236] modified untracked
+    Welcome to the HW 2.3 validation tester
+    Trying to create a test user  TImVMLV
+    Found the test user  TImVMLV  in the users collection
+    User creation successful.
+    Trying to login for test user  TImVMLV
+    User login successful.
+    Validation Code is  jkfds5834j98fnm39njf0920f02
+
+
+Homework 2.4 
+
+.. code-block:: javascript
+
+    > db.movieDetails.find({'year': 2013, 'awards.wins': 0, 'rated': 'PG-13'}).pretty()
+    {
+        "_id" : ObjectId("5692a3e124de1e0ce2dfda22"),
+        "title" : "A Decade of Decadence, Pt. 2: Legacy of Dreams",
+        "year" : 2013,
+        "rated" : "PG-13",
+        "released" : ISODate("2013-09-13T04:00:00Z"),
+        "runtime" : 65,
+        "countries" : [
+            "USA"
+        ],
+        "genres" : [
+            "Documentary"
+        ],
+        "director" : "Drew Glick",
+        "writers" : [
+            "Drew Glick"
+        ],
+        "actors" : [
+            "Gordon Auld",
+            "Howie Boulware Jr.",
+            "Tod Boulware",
+            "Chen Drachman"
+        ],
+        "plot" : "A behind the scenes look at the making of A Tiger in the Dark: The Decadence Saga.",
+        "poster" : null,
+        "imdb" : {
+            "id" : "tt2199902",
+            "rating" : 8,
+            "votes" : 50
+        },
+        "awards" : {
+            "wins" : 0,
+            "nominations" : 0,
+            "text" : ""
+        },
+        "type" : "movie"
+    }
+
+
 Tips and Tricks for MongDB
 --------------------------
 
