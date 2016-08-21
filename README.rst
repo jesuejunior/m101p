@@ -156,6 +156,57 @@ To see the answer in mongo shell
     ...   { '$limit': 1 } ] )
     { "_id" : 13, "average" : 91.98315917172745 }
 
+Homework 3.2
+Needed download the follow file and unzip then.
+
+.. code-block:: shell
+
+    $ wget https://university.mongodb.com/static/MongoDB_2016_M101P_August/handouts/blog-week-3-m101p.9b164043aad5.zip
+
+You need edit blogPostDAO.py
+
+In the line 56 add the follow code
+
+.. code-block:: python
+
+     self.posts.insert_one(post)
+
+In the line 71 add the follow code 
+
+.. code-block:: python
+
+    cursor = self.posts.find()
+
+In the line 94 add the follow code
+
+.. code-block:: python
+
+    post = self.posts.find_one({'permalink': permalink})
+
+Then the result of validation script is:
+
+.. code-block:: shell
+
+    $ python validate.py
+    master [+       0] [accd4a5] untracked
+    Welcome to the HW 3.2 and HW 3.3 validation tester
+    Trying to create a test user  WtZqPGf
+    Found the test user  WtZqPGf  in the users collection
+    User creation successful.
+    Trying to login for test user  WtZqPGf
+    User login successful.
+    Trying to submit a post with title  oDuTCqNVGuTeCdqSdvsuzliRAknaCC
+    Submission of single post successful
+    Trying to submit a post with title  uAKlLyovcEdTJuFKolWbdCaULhbUQd
+    Submission of second post successful
+    Trying to grab the blog home page at url  http://localhost:8082/
+    Block index looks good.
+    Found blog post in posts collection
+    Tests Passed for HW 3.2. Your HW 3.2 validation code is 89jklfsjrlk209jfks2j2ek
+    Trying to submit a blog comment for post with title oDuTCqNVGuTeCdqSdvsuzliRAknaCC
+    Can't add blog comments (so HW 3.3 not yet complete)
+
+Homework 3.3
 
 
 Tips and Tricks for MongDB
