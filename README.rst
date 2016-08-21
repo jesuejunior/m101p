@@ -121,6 +121,42 @@ Homework 2.4
         "type" : "movie"
     }
 
+Homework 3.1
+
+.. code-block:: shell
+
+    $ cd chapter3/hw3.1
+
+Import data to mongo
+
+.. code-block:: shell
+
+    $ mongoimport --drop -d school -c students students.json
+
+Execute apython program hw3.1
+
+.. code-block:: shell
+
+    $ python hw3.1.py
+
+To see the answer in mongo shell
+
+.. code-block:: javascript
+
+    > db.students.aggregate( [
+    ...   { '$unwind': '$scores' },
+    ...   {
+    ...     '$group':
+    ...     {
+    ...       '_id': '$_id',
+    ...       'average': { $avg: '$scores.score' }
+    ...     }
+    ...   },
+    ...   { '$sort': { 'average' : -1 } },
+    ...   { '$limit': 1 } ] )
+    { "_id" : 13, "average" : 91.98315917172745 }
+
+
 
 Tips and Tricks for MongDB
 --------------------------
