@@ -208,6 +208,21 @@ Then the result of validation script is:
 
 Homework 3.3
 
+Using the same project from HW3.2 into hw3.3
+
+In the line 112 and 113 add the follow code
+
+.. code-block:: python
+
+    result = self.posts.update({'permalink': permalink}, {'$push': {'comments': comment}})
+    return result
+
+then execute validation and get the result.
+
+.. code-block:: shell
+
+    Successfully added blog comments
+    Tests Passed for HW 3.3. Your HW 3.3 validation code is jk1310vn2lkv0j2kf0jkfs
 
 Tips and Tricks for MongDB
 --------------------------
