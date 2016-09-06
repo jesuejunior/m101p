@@ -224,6 +224,24 @@ then execute validation and get the result.
     Successfully added blog comments
     Tests Passed for HW 3.3. Your HW 3.3 validation code is jk1310vn2lkv0j2kf0jkfs
 
+
+
+Homework 5.1
+
+For import big json files you would need more workers.
+
+.. code-block:: shell
+
+    mongoimport --drop -d blog -c posts -j 4 < posts.b90d46c5a251.json
+
+Homework 5.2
+
+.. code-block:: shell
+
+    mongoimport --drop -d test -c zips -j 4 < small_zips.28ecb7fb8fba.json
+
+
+
 Tips and Tricks for MongDB
 --------------------------
 
