@@ -240,7 +240,24 @@ Homework 5.2
 
     mongoimport --drop -d test -c zips -j 4 < small_zips.28ecb7fb8fba.json
 
+Homework 6.5
 
+Executing shellscript to create ReplicaSet to validate HW
+
+
+.. code-block:: shell
+
+    $ bash create_repl_set.sh
+
+Executing validation script to get answer
+
+.. code-block:: shell
+
+    $ python validate__hw6.5.py
+    Welcome to the HW 6.x replica Checker. My job is to make sure you started a replica set with three
+    nodes
+    Looks good. Replica set with three nodes running
+    Tests Passed for HW 6.5. Your HW 6.5 validation code is kjvjkl3290mf0m20f2k
 
 Tips and Tricks for MongDB
 --------------------------
